@@ -1,0 +1,17 @@
+{
+  "name": "deployed-to-do-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "if-env TYPE=server && (cd server && npm install) || (cd client && npm install)",
+    "server": " node ./server/serve.js",
+    "client": "cd client && npm start"
+  },
+  "author": "Tuan",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "if-env": "^1.0.4"
+  }
+}
