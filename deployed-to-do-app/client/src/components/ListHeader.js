@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useCookies } from "react-cookie";
 
 function ListHeader({ listName, getData }) {
-    const [cookies, setCookie, removeCookie] = useCookies(null);
+    const [cookies, removeCookie] = useCookies(null);
     const [showModal, setShowModal] = useState(null);  
 
     const signOut = () => {
