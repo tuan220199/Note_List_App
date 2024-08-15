@@ -14,7 +14,7 @@ function App() {
   const getData = async () => {
     
     try {
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${userEmail}`);
+      const response = await fetch(`https://listing-making-app-backend-gahmeffmcah4fjgc.westeurope-01.azurewebsites.net/todos/${userEmail}`);
       const json = await response.json();
       setTasks(json);
     }

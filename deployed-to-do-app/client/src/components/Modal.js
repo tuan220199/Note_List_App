@@ -15,7 +15,7 @@ function Modal({ mode, setShowModal, getData, task }) {
   const postData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos`, {
+      const response = await fetch(`https://listing-making-app-backend-gahmeffmcah4fjgc.westeurope-01.azurewebsites.net//todos`, {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -33,7 +33,7 @@ function Modal({ mode, setShowModal, getData, task }) {
   const editData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${task.id}`, {
+      const response = await fetch(`https://listing-making-app-backend-gahmeffmcah4fjgc.westeurope-01.azurewebsites.net/todos/${task.id}`, {
         method: "PUT",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)

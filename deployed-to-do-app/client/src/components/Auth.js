@@ -23,7 +23,7 @@ function Auth() {
         return;
       }
 
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/${endpoint}`, {
+      const response = await fetch(`https://listing-making-app-backend-gahmeffmcah4fjgc.westeurope-01.azurewebsites.net/${endpoint}`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email, password})
