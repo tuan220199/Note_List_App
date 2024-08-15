@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useCookies } from 'react-cookie';
 
 function Modal({ mode, setShowModal, getData, task }) {
-  const [cookies] = useCookies(null);
+  const [cookies, setCookie, removeCookie] = useCookies(null);
   const editMode = mode === 'edit';
 
   const [data, setData] = useState({

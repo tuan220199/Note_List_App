@@ -5,7 +5,7 @@ import {useEffect, useState} from'react';
 import { useCookies } from "react-cookie";
 
 function App() {
-  const [cookies] = useCookies(null);
+  const [cookies, setCookie, removeCookie] = useCookies(null);
 
   const authToken = cookies.AuthToken;
   const userEmail = cookies.Email;
@@ -27,7 +27,7 @@ function App() {
     if (authToken){
       getData(); // Call the function here
     }}
-  , [authToken]); // Dependency array should be outside the function call
+  , []); // Dependency array should be outside the function call
   
   console.log(tasks);
 
