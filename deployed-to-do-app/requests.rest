@@ -1,8 +1,0 @@
-GET http://localhost:8000/todos
-
-###
-PUT http://localhost:8000/todos/befd0e92-106b-4563-837e-b4bbdf2a8419
-Content-Type: application/json
-{
-    "title": "Clean Desk!!!"
-}
