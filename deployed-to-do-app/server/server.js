@@ -13,7 +13,7 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send("Hello");
 })
-
+/*
 // get all todos
 app.get('/todos/:userEmail', async (req, res) => {
     console.log(req);
@@ -107,6 +107,7 @@ app.post('/login', async (req, res) => {
         console.error(err);
     }
 })
+*/
 
 app.listen(PORT, () => {
     console.log(`Server running on PORT ${PORT}`)
