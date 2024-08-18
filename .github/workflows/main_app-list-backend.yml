@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: ./deployed-to-do-app/server
 
   deploy:
     runs-on: ubuntu-latest
