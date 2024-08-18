@@ -1,33 +1,25 @@
 {
-  "name": "deployed-to-do-app",
+  "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "cd server && node server.js",
-    "deploy": "cd server && node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "if-env TYPE=server && (cd server && npm install) || (cd client && npm install)",
-    "server": " node ./server/serve.js",
-    "client": "cd client && npm start"
+    "start": "node server.js",
+    "deploy": "node server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "author": "Tuan",
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@babel/plugin-transform-class-properties": "^7.24.7",
-    "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.7",
-    "@babel/plugin-transform-numeric-separator": "^7.24.7",
-    "@babel/plugin-transform-optional-chaining": "^7.24.8",
-    "@babel/plugin-transform-private-methods": "^7.24.7",
-    "@babel/plugin-transform-private-property-in-object": "^7.24.7",
-    "@eslint/config-array": "^0.18.0",
-    "@eslint/object-schema": "^2.1.4",
-    "@jridgewell/sourcemap-codec": "^1.5.0",
-    "@rollup/plugin-terser": "^0.4.4",
-    "glob": "^9.0.0",
-    "if-env": "^1.0.4",
-    "lru-cache": "^6.0.0",
-    "rimraf": "^4.0.0",
-    "workbox-background-sync": "^7.1.0"
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.4",
+    "pg": "^8.12.0",
+    "uuid": "^10.0.0"
   }
 }
