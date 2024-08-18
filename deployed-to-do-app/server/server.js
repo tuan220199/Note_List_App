@@ -10,22 +10,25 @@ const jwt = require('jsonwebtoken');
 app.use(express.json());
 app.use(cors());
 
+/*
 app.get('/', (req, res) => {
     res.send("Hello");
-})
-/*
+})*/
+
 // get all todos
 app.get('/todos/:userEmail', async (req, res) => {
     console.log(req);
     const userEmail = req.params.userEmail;
 
     try {
-        const todods = await pool.query('SELECT * FROM todos WHERE user_email = $1', [userEmail]);
-        res.json(todods.rows);
+        const todos = await pool.query('SELECT * FROM todos WHERE user_email = $1', [userEmail]);
+        res.json(todos.rows);
     } catch (err) {
-        console.error(error);
+        console.error(err); // Changed from 'error' to 'err'
+        res.status(500).json({error: 'Failed to fetch todos'});
     }
-})
+});
+
 
 // create new to do
 app.post('/todos', async (req, res) => {
@@ -107,7 +110,7 @@ app.post('/login', async (req, res) => {
         console.error(err);
     }
 })
-*/
+
 
 app.listen(PORT, () => {
     console.log(`Server running on PORT ${PORT}`)

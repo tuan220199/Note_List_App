@@ -11,10 +11,12 @@ function App() {
   const userEmail = cookies.Email;
   const [tasks, setTasks] = useState(null);
 
+  console.log(authToken, userEmail);
+
   const getData = async () => {
     
     try {
-      const response = await fetch(`https://listing-making-app-backend-gahmeffmcah4fjgc.westeurope-01.azurewebsites.net/todos/${userEmail}`);
+      const response = await fetch(`http://localhost:8000/todos/${userEmail}`);
       const json = await response.json();
       setTasks(json);
     }
