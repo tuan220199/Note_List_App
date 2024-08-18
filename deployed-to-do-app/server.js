@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 // get all todos
-app.get('/todos/:userEmail', async (req, res) => {
+/*app.get('/todos/:userEmail', async (req, res) => {
     console.log(req);
     const userEmail = req.params.userEmail;
 
@@ -106,7 +106,7 @@ app.post('/login', async (req, res) => {
     catch (err) {
         console.error(err);
     }
-})
+})*/
 
 app.listen(PORT, () => {
     console.log(`Server running on PORT ${PORT}`)
