@@ -7,7 +7,7 @@
     "deploy": "cd server && node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "if-env TYPE=server && (cd server && npm install) || (cd client && npm install)",
-    "server": " node ./server/serve.js",
+    "server": "cd server && node server.js",
     "client": "cd client && npm start"
   },
   "author": "Tuan",
