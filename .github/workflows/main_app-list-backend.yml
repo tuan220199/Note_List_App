@@ -1,5 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+# Workflow for building and deploying a Node.js app to Azure Web App
 
 name: Build and deploy Node.js app to Azure Web App - App-List-backend
 
@@ -27,11 +26,12 @@ jobs:
           npm run build --if-present
           npm run test --if-present
       
+      # Uploading all necessary files in the root directory
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: ./server # Ensure that all necessary files are included
 
   deploy:
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
     permissions:
-      id-token: write #This is required for requesting the JWT
+      id-token: write # This is required for requesting the JWT
 
     steps:
       - name: Download artifact from build job
@@ -55,11 +55,11 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_591B06C5FF784A0F82F25468C647AD35 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5452E3F24A8D4DA0A17CCAE00251F206 }}
 
+      # Deploying everything from the root directory
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
           app-name: 'App-List-backend'
           slot-name: 'Production'
-          package: .
-          
+          package: . # Ensure all necessary files are in the root
