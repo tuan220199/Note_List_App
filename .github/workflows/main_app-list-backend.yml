@@ -23,15 +23,25 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
+          TYPE=server npm run build --if-present
           npm run test --if-present
-      
-      # Uploading all necessary files in the root directory
-      - name: Upload artifact for deployment job
+
+      - name: Upload server artifact
         uses: actions/upload-artifact@v4
         with:
-          name: node-app
-          path: . # Ensure that all necessary files are included
+          name: server-app
+          path: |
+            ./server
+            !./server/node_modules
+
+      - name: Upload client artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: client-app
+          path: |
+            ./client
+            !./client/node_modules
+
 
   deploy:
     runs-on: ubuntu-latest
