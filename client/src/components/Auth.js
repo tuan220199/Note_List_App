@@ -23,7 +23,7 @@ function Auth() {
         return;
       }
 
-      const response = await fetch(`http://localhost:8000/${endpoint}`, {
+      const response = await fetch(`https://app-list-backend-hcchdyh2agg5hhgx.westeurope-01.azurewebsites.net/${endpoint}`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({email, password})

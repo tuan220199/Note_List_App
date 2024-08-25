@@ -8,7 +8,7 @@ function ListItem ({task, getData}) {
 
     const deleteItem = async () => {
       try {
-        const response = await fetch(`http://localhost:8000/todos/${task.id}`, {
+        const response = await fetch(`https://app-list-backend-hcchdyh2agg5hhgx.westeurope-01.azurewebsites.net/todos/${task.id}`, {
           method: "DELETE",
         });
         if (response.status === 200) {
